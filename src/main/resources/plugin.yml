@@ -1,0 +1,51 @@
+name: ALLINFactions
+version: '${version}'
+main: ru.allin.factions.ALLINFactionsPlugin
+api-version: '1.21'
+authors: [ALLIN]
+description: Three-faction gameplay system for ALLINONLINE
+softdepend: [Vault, ALLINMiner, ALLINFermer, ALLINFishing]
+commands:
+  faction:
+    aliases: [f]
+    description: Open faction menu
+    permission: allinfactions.use
+  fc:
+    description: Faction chat
+    permission: allinfactions.use
+  warn:
+    description: Issue a warning
+    permission: allinfactions.use
+  warns:
+    description: View warnings
+    permission: allinfactions.use
+  search:
+    description: Search a wanted player
+    permission: allinfactions.use
+  jailtime:
+    description: View remaining jail time
+    permission: allinfactions.use
+  steal:
+    description: Attempt to steal from a player
+    permission: allinfactions.use
+  fadmin:
+    description: ALLINFactions admin commands
+    permission: allinfactions.admin
+permissions:
+  allinfactions.use:
+    default: true
+  allinfactions.admin:
+    default: op
+    children:
+      allinfactions.admin.factions: true
+      allinfactions.admin.prison: true
+      allinfactions.admin.economy: true
+      allinfactions.admin.locations: true
+  allinfactions.admin.factions:
+    default: op
+  allinfactions.admin.prison:
+    default: op
+  allinfactions.admin.economy:
+    default: op
+  allinfactions.admin.locations:
+    default: op

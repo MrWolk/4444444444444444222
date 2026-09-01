@@ -1,0 +1,3 @@
+package ru.allin.factions.command;
+import org.bukkit.Bukkit;import org.bukkit.command.*;import org.bukkit.entity.Player;import ru.allin.factions.service.ThiefService;import ru.allin.factions.util.Text;
+public final class StealCommand implements CommandExecutor{private final ThiefService thieves;public StealCommand(ThiefService thieves){this.thieves=thieves;}public boolean onCommand(CommandSender s,Command c,String l,String[] a){if(!(s instanceof Player p))return true;if(a.length<1){p.sendMessage(Text.msg("Использование: /steal <ник>"));return true;}Player t=Bukkit.getPlayerExact(a[0]);if(t==null){p.sendMessage(Text.msg("Игрок должен быть онлайн."));return true;}thieves.steal(p,t);return true;}}

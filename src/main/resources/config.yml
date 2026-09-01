@@ -1,0 +1,105 @@
+economy:
+  salaries:
+    interval-minutes: 60
+    online-time-only: true
+    default:
+      inquisition: { initiate: 200.0, inquisitor: 200.0, master: 200.0 }
+      thieves: { thief: 200.0, law-thief: 200.0, king: 200.0 }
+      workers: { factory-worker: 200.0, workaholic: 200.0, father: 200.0 }
+    debt:
+      enabled: true
+      auto-pay: true
+      old-debt-first: true
+
+factions:
+  leave:
+    rejoin-cooldown-hours: 24
+  leaders:
+    one-leader-per-faction: true
+    admin-only-appointment: true
+
+inquisition:
+  warns:
+    wanted-after: 3
+    initiate-cooldown-seconds: 600
+  search:
+    duration-seconds: 10
+    cooldown-seconds: 300
+    max-distance: 3.0
+  baton:
+    hits-to-arrest: 10
+    progress-reset-seconds: 30
+    receive-cooldown-hours: 24
+    wanted-only: true
+
+prison:
+  sentence:
+    first-minutes: 30
+    additional-minutes-per-imprisonment: 5
+    online-time-only: true
+  release:
+    clear-warns: true
+    clear-wanted: true
+    teleport-to-server-spawn: true
+  toilet:
+    duration-seconds: 10
+    reward: 1.0
+
+thieves:
+  stealing:
+    success-chance: 0.20
+    duration-seconds: 5
+    cooldown-seconds: 600
+    max-distance: 5.0
+    money: { min: 5.0, max: 20.0 }
+    ore: { min: 1, max: 2 }
+    allowed-ores: [COAL_ORE, COPPER_ORE, IRON_ORE, GOLD_ORE, REDSTONE_ORE, LAPIS_ORE, EMERALD_ORE, DIAMOND_ORE, ANCIENT_DEBRIS]
+    cooldown-on-cancel: false
+    notify-victim-on-failure: true
+    notify-victim-on-success: false
+  contraband:
+    amount: { min: 1, max: 3 }
+    reward-per-item: { min: 80.0, max: 100.0 }
+    pickup-duration-seconds: 5
+    delivery-duration-seconds: 10
+    delivery-max-distance: 3.0
+    require-inquisition-online: true
+    speed-reduction-percent: 50
+    block-ender-pearls: true
+    destroy-on-death: true
+    prevent-drop: true
+    prevent-storage: true
+    prevent-transfer: true
+
+workers:
+  promotion:
+    workaholic-hours: 100
+    online-time-only: true
+    reset-progress-on-leave: true
+  loot-bonus:
+    factory-worker: 0.05
+    workaholic: 0.10
+    father: 0.10
+    double-special-rewards: false
+    notification:
+      actionbar: true
+      sound: true
+
+faction-chat:
+  join-notifications: true
+  quit-notifications: true
+  sounds:
+    messages: true
+    announcements: true
+  admin-spy:
+    default: false
+
+database:
+  backup:
+    enabled: true
+    interval-hours: 6
+    keep: 20
+
+logging:
+  enabled: true
+  file: logs/factions.log
